@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <th></th>
+    <th>Rank and Title</th>
+    <th>Rating</th>
+  </tr>
+{{#each model as |movieUnit|}}
+  {{movie-listing movie=movieUnit}}
+{{/each}}
+</table>
+{{outlet}}

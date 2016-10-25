@@ -2,17 +2,4 @@
 <h2>This is my Movie App</h2>
 <p>Here you can view the top 250 imdb top movies</p>
 
-<table >
-  <tr>
-    <th></th>
-    <th>Rank and Title</th>
-    <th>Rating</th>
-  </tr>
-  {{#each model as |movie|}}
-    <tr class="listing">
-      <td>{{movie.image}}</td>
-      <td>{{movie.id}}.{{movie.title}}</td>
-      <td>{{movie.rating}}</td>
-    </tr>
-  {{/each}}
-</table>
+{{outlet}}

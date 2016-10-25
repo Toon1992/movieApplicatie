@@ -1,6 +1,5 @@
 import Ember from 'ember';
-
-let movies =[{
+/*let movies =[{
   id:1,
   title:'Shawshank redemption',
   rating:9.2,
@@ -27,10 +26,7 @@ let movies =[{
   director:'Francis Ford Coppola',
   stars: ' Al Pacino, Robert De Niro, Robert Duvall',
   image:'The Godfather II'
-}];
+}];*/
 
 export default Ember.Route.extend({
-  model(){
-    return movies;
-  }
 });
