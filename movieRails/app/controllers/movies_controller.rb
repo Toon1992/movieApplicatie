@@ -1,22 +1,16 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: [:show, :update, :destroy]
 
   # GET /movies
   def index
     @movies = Movie.all
+
+    render json: @movies
   end
 
   # GET /movies/1
   def show
-  end
-
-  # GET /movies/new
-  def new
-    @movie = Movie.new
-  end
-
-  # GET /movies/1/edit
-  def edit
+    render json: @movie
   end
 
   # POST /movies
@@ -24,25 +18,24 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
 
     if @movie.save
-      redirect_to @movie, notice: 'Movie was successfully created.'
+      render json: @movie, status: :created, location: @movie
     else
-      render :new
+      render json: @movie.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /movies/1
   def update
     if @movie.update(movie_params)
-      redirect_to @movie, notice: 'Movie was successfully updated.'
+      render json: @movie
     else
-      render :edit
+      render json: @movie.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /movies/1
   def destroy
     @movie.destroy
-    redirect_to movies_url, notice: 'Movie was successfully destroyed.'
   end
 
   private

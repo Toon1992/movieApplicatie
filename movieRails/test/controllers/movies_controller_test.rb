@@ -6,43 +6,33 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get movies_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_movie_url
+    get movies_url, as: :json
     assert_response :success
   end
 
   test "should create movie" do
     assert_difference('Movie.count') do
-      post movies_url, params: { movie: { description: @movie.description, director: @movie.director, image: @movie.image, rating: @movie.rating, stars: @movie.stars, title: @movie.title, year: @movie.year } }
+      post movies_url, params: { movie: { description: @movie.description, director: @movie.director, image: @movie.image, rating: @movie.rating, stars: @movie.stars, title: @movie.title, year: @movie.year } }, as: :json
     end
 
-    assert_redirected_to movie_url(Movie.last)
+    assert_response 201
   end
 
   test "should show movie" do
-    get movie_url(@movie)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_movie_url(@movie)
+    get movie_url(@movie), as: :json
     assert_response :success
   end
 
   test "should update movie" do
-    patch movie_url(@movie), params: { movie: { description: @movie.description, director: @movie.director, image: @movie.image, rating: @movie.rating, stars: @movie.stars, title: @movie.title, year: @movie.year } }
-    assert_redirected_to movie_url(@movie)
+    patch movie_url(@movie), params: { movie: { description: @movie.description, director: @movie.director, image: @movie.image, rating: @movie.rating, stars: @movie.stars, title: @movie.title, year: @movie.year } }, as: :json
+    assert_response 200
   end
 
   test "should destroy movie" do
     assert_difference('Movie.count', -1) do
-      delete movie_url(@movie)
+      delete movie_url(@movie), as: :json
     end
 
-    assert_redirected_to movies_url
+    assert_response 204
   end
 end
