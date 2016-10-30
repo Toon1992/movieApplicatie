@@ -32,6 +32,26 @@ movie3 = Movie.create(
     description:'The early life and career of Vito Corleone in 1920s New York is portrayed while his son, Michael, expands and tightens his grip on his crime syndicate stretching from Lake Tahoe, Nevada to pre-revolution 1958 Cuba.',
     year:1974,
     director:'Francis Ford Coppola',
-    stars: ' Al Pacino, Robert De Niro, Robert Duvall',
+    stars: 'Al Pacino, Robert De Niro, Robert Duvall',
     image:'The Godfather II'
+)
+
+movie4 = Movie.create(
+    title:'The Dark Knight',
+    rating:8.9,
+    description:'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.',
+    year:2008,
+    director:'Christopher Nolan',
+    stars: 'Christian Bale, Heath Ledger, Aaron Eckhart',
+    image:'The Dark Knight'
+)
+
+movie5 = Movie.create(
+    title:'12 Angry Men',
+    rating:8.9,
+    description:'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.',
+    year:1957,
+    director:'Sidney Lumet',
+    stars: 'Henry Fonda, Lee J. Cobb, Martin Balsam',
+    image:'12 Angry Men'
 )

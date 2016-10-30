@@ -1,5 +1,14 @@
-<tr class="listing">
+<!--<tr class="listing">
   <td>{{movie.image}}</td>
   <td>{{#link-to "movies.show" movie}}{{movie.id}}.{{movie.title}}{{/link-to}}</td>
   <td>{{movie.rating}}</td>
-</tr>
+</tr>-->
+
+<!--<li>
+  <strong>{{movie.id}}. {{#link-to "movies.show" movie}}{{movie.title}}{{/link-to}}</strong>
+</li>-->
+{{#each sortedMovies as |movie|}}
+  <li>
+    <strong>{{movie.id}}. {{#link-to "movies.show" movie}}{{movie.title}}{{/link-to}}</strong>
+  </li>
+{{/each}}
