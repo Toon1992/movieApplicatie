@@ -1,4 +1,7 @@
-<p>{{model.image}} {{model.title}}({{model.year}}) {{model.rating}}</p>
-<p>{{model.description}}</p>
-<p>Director: {{model.director}}</p>
-<p>Stars: {{model.stars}}</p>
+<div class="movie_detail">
+  <h3>{{model.title}} ({{model.year}}) Rating: {{model.rating}}/10</h3>
+  <p> <strong>Description:</strong> {{model.description}}</p>
+  <p> <strong>Director:</strong> {{model.director}}</p>
+  <p> <strong>Stars:</strong> {{model.stars}}</p>
+  {{#link-to "movies.index" class="button"}}Back{{/link-to}}
+</div>

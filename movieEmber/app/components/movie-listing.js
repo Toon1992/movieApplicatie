@@ -1,7 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'ul',
+  tagName:'table',
   sortedMovies: Ember.computed.sort('movies', 'sortDefinition'),
-  sortDefinition: ['title']
+  sortBy: 'id',
+  reverseSort: false,
+  sortDefinition: Ember.computed('sortBy', 'reverseSort', function() {
+    let sortOrder = this.get('reverseSort') ? 'desc' : 'asc';
+    return [ `${this.get('sortBy')}:${sortOrder}` ];
+  })
 });

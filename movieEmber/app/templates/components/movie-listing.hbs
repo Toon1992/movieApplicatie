@@ -1,14 +1,13 @@
-<!--<tr class="listing">
-  <td>{{movie.image}}</td>
-  <td>{{#link-to "movies.show" movie}}{{movie.id}}.{{movie.title}}{{/link-to}}</td>
-  <td>{{movie.rating}}</td>
-</tr>-->
 
-<!--<li>
-  <strong>{{movie.id}}. {{#link-to "movies.show" movie}}{{movie.title}}{{/link-to}}</strong>
-</li>-->
+<tr>
+  <th>{{radio-button value='id' groupValue=sortBy}} ID</th>
+  <th>{{radio-button value='title' groupValue=sortBy}} Titel</th>
+  <th>{{radio-button value='rating' groupValue=sortBy}}Rating</th>
+</tr>
 {{#each sortedMovies as |movie|}}
-  <li>
-    <strong>{{movie.id}}. {{#link-to "movies.show" movie}}{{movie.title}}{{/link-to}}</strong>
-  </li>
+  <tr>
+    <td>{{movie.id}}</td>
+    <td>{{#link-to "movies.show" movie}}{{movie.title}}{{/link-to}}</td>
+    <td>{{movie.rating}}/10</td>
+  </tr>
 {{/each}}
