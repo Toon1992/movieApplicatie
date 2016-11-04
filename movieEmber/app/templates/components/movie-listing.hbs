@@ -2,12 +2,12 @@
 <tr>
   <th>{{radio-button value='id' groupValue=sortBy}} ID</th>
   <th>{{radio-button value='title' groupValue=sortBy}} Titel</th>
-  <th>{{radio-button value='rating' groupValue=sortBy}}Rating</th>
+  <!--<th>{{radio-button value='rating' groupValue=sortBy}}Rating</th>-->
 </tr>
 {{#each sortedMovies as |movie|}}
   <tr>
     <td>{{movie.id}}</td>
     <td>{{#link-to "movies.show" movie}}{{movie.title}}{{/link-to}}</td>
-    <td>{{movie.rating}}/10</td>
+    <!--<td>{{movie.rating}}/10</td>-->
   </tr>
 {{/each}}

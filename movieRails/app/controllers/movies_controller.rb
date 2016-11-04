@@ -10,9 +10,10 @@ class MoviesController < ApplicationController
   end
 
   # GET /movies/1
-  # def show
-  #   render json: @movie
-  # end
+   def show
+     #movie =Imdb::Movie.new(movie_id)
+     render json: @movie
+   end
   #
   # # POST /movies
   # def create
